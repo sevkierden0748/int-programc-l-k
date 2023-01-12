@@ -1,0 +1,56 @@
+<div class="col-lg-8 offset-lg-2 mt-5 card">
+    <article class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 class="card-title mb-4 mt-1">Giriş</h4>
+                <form>
+                    <div class="form-group">
+                        <label>Kullanıcı Adı</label>
+                        <input class="form-control" name="kadi" #kadi placeholder="Kullanıcı Adı" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Şifre</label>
+                        <input class="form-control" name="parola" #parola placeholder="Şifre" type="password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"
+                            (click)="GirisYap(kadi.value,parola.value)">Giriş Yap </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <h4 class="card-title mb-4 mt-1">Kayıt Ol</h4>
+                <form>
+                    <div class="form-group">
+                        <label>Kullanıcı Adı</label>
+                        <input class="form-control" name="kAdi" #kAdi placeholder="Kullanıcı Adı" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>İsim</label>
+                        <input class="form-control" name="isim" #isim placeholder="İsim" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Soyisim</label>
+                        <input class="form-control" name="soyisim" #soyisim placeholder="Soyisim" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" name="email" #email placeholder="Email" type="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Parola</label>
+                        <input class="form-control" name="Parola" #Parola placeholder="Şifre" type="password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"
+                            (click)="KayitOl(kAdi.value,isim.value,soyisim.value,email.value,Parola.value)"> Kayıt Ol
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+
+    <div [ngClass]="sonuc.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc.mesaj?.length">
+        {{sonuc.mesaj}}</div>
+</div>

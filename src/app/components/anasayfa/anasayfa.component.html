@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row pt-5">
+    <div class="btn-group btn-group-lg" role="group" aria-label="...">
+      <button type="button"  (click)="SinavByIslem('Türkçe')" class="btn btn-success" >
+        Türkçe
+      </button>
+      <button type="button"  (click)="SinavByIslem('Matematik')" class="btn btn-success" >
+        Matematik
+      </button>
+    </div>
+  </div>
+    <div class="row pt-4">
+        <div *ngFor="let sinav of sinavlar"  class="col-lg-4 mb-3">
+            <div [routerLink]="['/sinav', sinav.id]" class="card aktifCounter">
+                <div class="card-body">
+                  
+                  <h3 class="card-title"> <b> {{sinav.Ders}}</b></h3>
+                  <hr>
+                  <h5 class="card-title">Konu: <b> {{sinav.Baslik}}</b></h5>
+                  <p class="card-text pt-3">Süre: <b>{{sinav.Zaman}}</b></p>
+                  <p class="card-text">Görüntülenme: <b>{{sinav.Okunma}}</b></p>
+                </div>
+                <div class="card-footer" style="display: flex; align-items: center; justify-content: space-around;">
+                  <small class="text-muted"><b>{{sinav.Soru}} Soru</b></small>
+
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h6 class="card-subtitle">{{sinav.Ders}}</h6>
+            <h3 class="card-title">{{sinav.Baslik}}</h3>
+
+            <div class="row">
+
+                <div class="col-lg-7 col-md-7 col-sm-6">
+                    <h4 class="box-title mt-5">Sınav Detayı</h4>
+                    <p class="mt-5">{{sinav.Icerik}}</p>
+                    <h2 class="mt-5">
+                        {{sinav.Soru}} SORU
+
+                       
+                    </h2>
+                    <button *ngIf="servis.YetkiKontrol(['Admin'])" class="btn btn-primary btn-rounded mt-5" data-toggle="modal"
+                        data-target="#sinavDuzenleModal">Duzenle</button>
+                    <div class="modal fade" id="sinavDuzenleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Sınav Duzenle</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Başlık</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" [(ngModel)]="sinav.Baslik">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Detay</label>
+                                        <div class="col-sm-9">
+                                            <textarea type="text" class="form-control"
+                                                [(ngModel)]="sinav.Icerik"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Zaman</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" [(ngModel)]="sinav.Zaman">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Soru Sayısı</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" [(ngModel)]="sinav.Soru">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Ders</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" [(ngModel)]="sinav.Ders">
+                                                <option [value]="x" *ngFor="let x of Islem">{{x}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                        (click)="SinavDuzenle()">Duzenle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <button *ngIf="servis.YetkiKontrol(['Admin'])"  class="btn btn-primary btn-rounded mt-2" (click)="SinavSil()">Sil</button>
+
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h3 class="box-title mt-5">Detaylar</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-product">
+                            <tbody>
+                                <tr>
+                                    <td width="390">Zaman</td>
+                                    <td>{{sinav.Zaman}}</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Görünütlenme</td>
+                                    <td>{{sinav.Okunma}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Eklenme Tarihi</td>
+                                    <td>{{sinav.Tarih | date:'dd.MM.yyyy HH:mm:ss'}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

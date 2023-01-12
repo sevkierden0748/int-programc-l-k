@@ -1,0 +1,81 @@
+{
+  "kullanici": [
+    {
+      "KullaniciAdi": "hulyavural",
+      "Isim": "Hülya",
+      "Soyisim": "Vural",
+      "Email": "vuralhulya@gmail.com",
+      "Parola": "hulya",
+      "Yetkilimi": true,
+      "id": 7
+    },
+    {
+      "KullaniciAdi": "sevkierden",
+      "Isim": "sevki",
+      "Soyisim": "erden",
+      "Email": "sevki@mail.com",
+      "Parola": "sevki",
+      "Yetkilimi": true,
+      "id": 8
+    },
+    {
+      "KullaniciAdi": "aaaa",
+      "Isim": "zzzz",
+      "Soyisim": "aaaa",
+      "Email": "aaa@mail.com",
+      "Parola": "aaaa",
+      "KatilmaTarih": "2022-12-01T17:17:04.410Z",
+      "Yetkilimi": false,
+      "id": 9
+    }
+  ],
+  "sinav": [
+    {
+      "Baslik": "Köklü Sayılar",
+      "Icerik": "",
+      "Marka": "Range Rover",
+      "Model": "Vogue",
+      "Yil": "2015",
+      "Fiyat": 1100,
+      "SatisKiralik": "Kiralık",
+      "Tip": "Suv",
+      "Vites": "Otomatik",
+      "Yakit": "Benzin",
+      "Tel": "05638874273",
+      "Okunma": 0,
+      "Tarih": "2021-11-29T15:49:57.395Z",
+      "id": 1,
+      "Zaman": "20",
+      "Soru": 10,
+      "Ders": "Matematik"
+    },
+    {
+      "Marka": "Volkswagen",
+      "Model": "Passat",
+      "Yil": "2009",
+      "Fiyat": 250,
+      "SatisKiralik": "Kiralık",
+      "Tip": "Sedan",
+      "Vites": "Manuel",
+      "Yakit": "Dizel",
+      "Tel": "05466874651",
+      "Okunma": 0,
+      "Tarih": "2021-11-29T19:38:53.436Z",
+      "id": 3,
+      "Baslik": "Cümlede Anlam",
+      "Zaman": "40",
+      "Soru": 30,
+      "Ders": "Türkçe"
+    },
+    {
+      "Baslik": "Ardışık Sayılar",
+      "Icerik": "Ardışık sayılar ile ilgili 20 test sorusu",
+      "Zaman": "40",
+      "Soru": 20,
+      "Ders": "Matematik",
+      "Okunma": 0,
+      "Tarih": "2022-12-01T17:07:13.014Z",
+      "id": 13
+    }
+  ]
+}

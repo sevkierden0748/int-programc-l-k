@@ -1,0 +1,407 @@
+<div class="pt-5">
+    <div class="row">
+        <div class="col-lg-4  my-2">
+            <div class="btn-group btn-group-md" role="group" aria-label="...">
+                <button type="button" (click)="SayfaDegistir('Uye')" class="btn btn-outline-primary">
+                    Üyeler
+                </button>
+                <button type="button" (click)="SayfaDegistir('Uye')" data-toggle="modal"
+                    data-target="#kullaniciEkleModal" class="btn btn-outline-primary">
+                    Üye Ekle
+                </button>
+                <div class="modal fade" id="kullaniciEkleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Kullanici Ekle</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Kullanıcı Adı</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" [(ngModel)]="secKullanici.KullaniciAdi">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">İsim</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" [(ngModel)]="secKullanici.Isim">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Soyisim</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" [(ngModel)]="secKullanici.Soyisim">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" [(ngModel)]="secKullanici.Email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Parola</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" class="form-control" [(ngModel)]="secKullanici.Parola">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Yetkili</label>
+                                    <div class="col-sm-9">
+                                        <input type="checkbox" class="form-control"
+                                            [(ngModel)]="secKullanici.Yetkilimi">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    (click)="KullaniciEkle()">Ekle</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" (click)="SayfaDegistir('Uye')" data-toggle="modal"
+                    data-target="#kullaniciAraModal" class="btn btn-outline-primary">
+                    Üye Ara
+                </button>
+                <div class="modal fade" id="kullaniciAraModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Kullanici Ara</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Ara</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="ara" #ara>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    (click)="KullaniciAra(ara.value)">Ara</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4  my-2">
+            <div class="btn-group btn-group-md" role="group" aria-label="...">
+                <button type="button" (click)="SayfaDegistir('Sınav')" class="btn btn-outline-primary">
+                    Sınavlar
+                </button> 
+                <button type="button" (click)="SayfaDegistir('Sınav')" data-toggle="modal"
+                data-target="#sinavEkleModal" class="btn btn-outline-primary">
+                    Sınav Ekle
+                </button>
+                <div class="modal fade" id="sinavEkleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Sınav Ekle</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Başlık</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" [(ngModel)]="secSinav.Baslik">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Detay</label>
+                                    <div class="col-sm-9">
+                                        <textarea type="text" class="form-control" [(ngModel)]="secSinav.Icerik"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Zaman</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" [(ngModel)]="secSinav.Zaman">
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Soru</label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control" [(ngModel)]="secSinav.Soru">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Ders</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" [(ngModel)]="secSinav.Ders">
+                                            <option [value]="x" *ngFor="let x of Islem">{{x}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    (click)="SinavEkle()">Ekle</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" (click)="SayfaDegistir('Sinav')" data-toggle="modal"
+                data-target="#sinavAraModal" class="btn btn-outline-primary">
+                    Sınav Ara
+                </button>
+                <div class="modal fade" id="sinavAraModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Sınav Ara</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Ara</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="sinavAra" #sinavAra>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    (click)="SinavAra(sinavAra.value)">Ara</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="currentPage == 'Uye'">
+        <div [ngClass]="sonuc.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc.mesaj?.length">
+            {{sonuc.mesaj}}</div>
+        <div class="row pt-5">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Kullanıcı Adı</th>
+                        <th scope="col">İsim</th>
+                        <th scope="col">Soyisim</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Parola</th>
+                        <th scope="col">Tarih</th>
+                        <th scope="col">Admin</th>
+                        <th scope="col">Sil</th>
+                        <th scope="col">Duzenle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let kullanici of kullanicilar">
+                        <td>{{kullanici.id}}</td>
+                        <td>{{kullanici.KullaniciAdi}}</td>
+                        <td>{{kullanici.Isim}}</td>
+                        <td>{{kullanici.Soyisim}}</td>
+                        <td>{{kullanici.Email}}</td>
+                        <td>{{kullanici.Parola}}</td>
+                        <td>{{kullanici.KatilmaTarih | date:'dd.MM.yyyy HH:mm:ss'}}</td>
+                        <td>{{kullanici.Yetkilimi}}</td>
+
+                        <td><button type="button" class="btn btn-danger" (click)="KullaniciSil(kullanici.id)">
+                                Sil</button></td>
+                        <td><button (click)="KullaniciSec(kullanici)" data-toggle="modal"
+                                data-target="#kullaniciDuzenleModal" type="button" class="btn btn-info">Duzenle</button>
+                        </td>
+
+                        <div class="modal fade" id="kullaniciDuzenleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Kullanici Ekle</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Kullanıcı Adı</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control"
+                                                    [(ngModel)]="secKullanici.KullaniciAdi">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">İsim</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" [(ngModel)]="secKullanici.Isim">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Soyisim</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control"
+                                                    [(ngModel)]="secKullanici.Soyisim">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Email</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" class="form-control"
+                                                    [(ngModel)]="secKullanici.Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Parola</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control"
+                                                    [(ngModel)]="secKullanici.Parola">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Yetkili</label>
+                                            <div class="col-sm-9">
+                                                <input type="checkbox" class="form-control"
+                                                    [(ngModel)]="secKullanici.Yetkilimi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            (click)="KullaniciDuzenle()">Duzenle</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div *ngIf="currentPage == 'Sınav'">
+        <div [ngClass]="sonuc.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc.mesaj?.length">
+            {{sonuc.mesaj}}</div>
+        <div class="row pt-5">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Baslık</th>
+                        <th scope="col">Zaman</th>
+                        <th scope="col">Soru Sayısı</th>
+                        <th scope="col">Ders</th>
+                        <th scope="col">Okunma</th>
+                        <th scope="col">Tarih</th>
+                        <th scope="col">Sil</th>
+                        <th scope="col">Duzenle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sinav of sinavlar">
+                        <td>{{sinav.id}}</td>
+                        <td>{{sinav.Baslik}}</td>
+                        <td>{{sinav.Zaman}}</td>
+                        <td>{{sinav.Soru}}</td>
+                        <td>{{sinav.Ders}}</td>
+                        <td>{{sinav.Okunma}}</td>
+                        <td>{{sinav.Tarih | date:'dd.MM.yyyy HH:mm:ss'}}</td>
+
+                        <td><button type="button" class="btn btn-danger" (click)="SinavSil(sinav.id)">
+                                Sil</button></td>
+                        <td><button (click)="SinavSec(sinav)" data-toggle="modal" data-target="#sinavDuzenleModal"
+                                type="button" class="btn btn-info">Duzenle</button>
+                        </td>
+
+                        <div class="modal fade" id="sinavDuzenleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Sınav Duzenle</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Başlık</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" [(ngModel)]="secSinav.Baslik">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Detay</label>
+                                            <div class="col-sm-9">
+                                                <textarea type="text" class="form-control" [(ngModel)]="secSinav.Icerik"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Zaman</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" [(ngModel)]="secSinav.Zaman">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Soru</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" [(ngModel)]="secSinav.Soru">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Ders</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" [(ngModel)]="secSinav.Ders">
+                                                    <option [value]="x" *ngFor="let x of Islem">{{x}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            (click)="SinavDuzenle()">Duzenle</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

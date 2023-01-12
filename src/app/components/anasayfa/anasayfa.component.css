@@ -1,0 +1,8 @@
+
+.aktifCounter{
+    transition: ease-in-out 0.5s;
+}
+.aktifCounter:hover{
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
